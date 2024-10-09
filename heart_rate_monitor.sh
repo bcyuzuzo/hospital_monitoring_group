@@ -20,3 +20,12 @@ record_heart_rate() {
         sleep 1
     done
 }
+
+# Start recording in background
+record_heart_rate &
+
+# Store and display the process ID
+pid=$!
+echo "Heart rate monitoring started with PID: $pid"
+echo "To view the log in real-time, use: tail -f heart_rate_log.txt"
+echo "To stop the monitoring, use: kill $pid"
